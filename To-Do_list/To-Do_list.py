@@ -1,5 +1,5 @@
 tarefa = []
-identificacao = 0
+identificacao = 1
 
 ######################
 ##### ADD TAREFA #####
@@ -10,7 +10,8 @@ def adicionar_tarefa():
     nova_descricao = input("Digite a descrição da tarefa:")
 
     with open("tarefas.txt", "a", encoding="utf-8") as arquivo:
-        arquivo.write( f"{indentificacao} - {novo_titulo} - {nova_descricao} \n")
+        arquivo.write( f"{identificacao} - {novo_titulo} - {nova_descricao} \n")
+
 
 
 ######################
@@ -31,8 +32,9 @@ def ler_tarefa():
 
 def deletar_tarefa():
     opcao = input("Qual tarefa queres deletar (use o número da linha, começando de 0):")
-    with open("tarefas.txt", "r", encoding="utf-8") as arquivo:
-        tarefa = arquivo.readlines()
+    with open("tarefas.txt", "w", encoding="utf-8") as arquivo:
+        arquivo.writelines(tarefa)
+        print("Tarefa deletada com sucesso.")
 
     try:
         indice = int(opcao)
@@ -46,6 +48,9 @@ def deletar_tarefa():
         return
 
 
+######################
+## ATUALIZAR TAREFA ##
+######################
 
 def atualizar_tarefa():
     try:
@@ -76,18 +81,12 @@ def atualizar_tarefa():
         arquivo.writelines(tarefas)
     print("Tarefa atualizada com sucesso.")
 
-######################
-## ATUALIZAR TAREFA ##
-######################
 
-def atualizar_tarefa():
-    opcao = input("Qual opção você quer atualizar(use numero)")
-    with open("tarefas.txt", "r", encoding="utf-8") as arquivo:
-        tarefa = arquivo.readlines()
 
 
 
 def main():
+    global identificacao
     print("Olá, bem vindo ao gerenciador de tarefas \n")
     escolha = -1
     while escolha != 0:
