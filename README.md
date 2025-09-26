@@ -1,6 +1,6 @@
 # 🐍 Python
 
-Este repositório contém dois projetos simples em Python, ideais para aprendizado e prática de programação:
+Este repositório contém três projetos simples em Python, ideais para aprendizado e prática de programação:
 
 ---
 
@@ -29,12 +29,20 @@ Um conversor de moedas que utiliza a [AwesomeAPI](https://docs.awesomeapi.com.br
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
+## 🎮 Jogo da Velha (Tic Tac Toe)
 
-- Python
+Um jogo da velha simples feito em Python para rodar no terminal. O usuário joga contra o computador.
 
----
+### 📌 Funcionalidades
 
-## 📄 Licença
+- O usuário joga com **O** e o computador com **X**  
+- Verificação automática de vitória e empate  
+- O tabuleiro é atualizado a cada jogada  
+- Caso o usuário insira um valor inválido, o programa pede novamente  
 
-Este projeto está sob a licença MIT.
+### 🚀 Como executar
+
+Basta rodar o script:
+
+```bash
+python jogo_da_velha.py
